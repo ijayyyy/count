@@ -8,7 +8,7 @@ import ErrorBoundary from "./components/errorboundary";
 import About from "./components/about";
 import Contact from "./components/contact";
 import dell from "./images/dell.jpg";
-
+import ThrowError from "./components/throwError";
 function App() {
   return (
     <ErrorBoundary>
@@ -20,6 +20,7 @@ function App() {
           <Route path="/counter" element={<Counter />} />
           <Route path="/useReducer" element={<UseReducer />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/throwError" element={<ThrowError />} />
         </Routes>
       </section>
     </ErrorBoundary>

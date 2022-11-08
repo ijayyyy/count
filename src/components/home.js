@@ -17,7 +17,7 @@ function Home() {
           <a href="/counter">Counter</a>
         </li>
         <li>
-          <a href="/errorboundary">ErrorBoundary</a>
+          <a href="/throwError">ErrorBoundary</a>
         </li>
         <li>
           <a href="/contact">Contact</a>
