@@ -50,7 +50,6 @@ a {
 /**counter style**/
 .counter-container {
   display: block;
-  border: 1px solid black;
   padding: 40px;
   margin: 10px;
 }

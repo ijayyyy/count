@@ -1,8 +1,9 @@
 import React from "react";
+import dell from "../images/dell.jpg";
 
 function Home() {
   return (
-    <div className="home-container">
+    <div className="home-container" style={{ background: `url(${dell})` }}>
       <nav className="active">
         <a href="/" className="main">
           Home

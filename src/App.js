@@ -7,11 +7,12 @@ import NotFound from "./components/notfound";
 import ErrorBoundary from "./components/errorboundary";
 import About from "./components/about";
 import Contact from "./components/contact";
+import dell from "./images/dell.jpg";
 
 function App() {
   return (
     <ErrorBoundary>
-      <section className="App">
+      <section className="App" style={{ background: `url(${dell})` }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
