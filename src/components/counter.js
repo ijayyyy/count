@@ -26,15 +26,16 @@ function Counter() {
     <div>
       <div className="counter-container">
         <h1>Count: {count}</h1>
-        <input
-          type="number"
-          placeholder="set value"
-          onKeyUp={(event) => {
+        <input type="number" placeholder="set value" />
+        <button
+          onClick={(event) => {
             if (event.key === "Enter") {
               changeValue(event.target.value);
             }
           }}
-        />
+        >
+          Enter
+        </button>
         <div className="counter">
           <button onClick={increment} className="increment">
             Increment
