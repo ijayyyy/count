@@ -2,7 +2,7 @@ import React from "react";
 import { useReducer } from "react";
 import { Link } from "react-router-dom";
 
-const initialCount = { count: 0 };
+const initialCount = { count: 0, input: "" };
 const reducer = (state, action) => {
   switch (action.type) {
     case "increment":
@@ -11,6 +11,10 @@ const reducer = (state, action) => {
       return { count: state.count - 1 };
     case "reset":
       return { count: (state.count = 0) };
+    case "setvalue":
+      return { ...state, input: action.payload };
+    case "updatecount":
+      return { count: action.payload };
     default:
       return { count: state.count };
   }
@@ -18,9 +22,22 @@ const reducer = (state, action) => {
 
 function UseReducer() {
   const [state, dispatch] = useReducer(reducer, initialCount);
+  const updateTheCount = () => {
+    dispatch({ type: "updatecount", payload: state.input - `${state.count}` });
+  };
+  const changeCountValue = (e) => {
+    dispatch({ type: "setvalue", payload: e.target.value });
+  };
   return (
     <div>
-      <h2>Count: {state.count}</h2>
+      <h2 className="counter">Count: {state.count}</h2>
+      <input
+        type="number"
+        value={state.input}
+        onChange={changeCountValue}
+        placeholder="set value"
+      />
+      <button onClick={updateTheCount}>Enter</button>
       <div className="counter">
         <button className="inc" onClick={() => dispatch({ type: "increment" })}>
           Increment

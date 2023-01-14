@@ -18,11 +18,23 @@ function Counter() {
     event.preventDefault();
     setCount(0);
   };
+  const changeValue = (value) => {
+    setCount(parseInt(value));
+  };
 
   return (
     <div>
       <div className="counter-container">
         <h1>Count: {count}</h1>
+        <input
+          type="number"
+          placeholder="set value"
+          onKeyUp={(event) => {
+            if (event.key === "Enter") {
+              changeValue(event.target.value);
+            }
+          }}
+        />
         <div className="counter">
           <button onClick={increment} className="increment">
             Increment
